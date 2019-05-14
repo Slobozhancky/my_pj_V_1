@@ -6,7 +6,47 @@
 // ============================
 // MAIN STYLES
 // ============================
-
-    // .header
-    //     &__title
-    //         font-family: NovaScript-Regular
+body 
+    font-family: serif
+    font-family: "IndieFlower"
+    font-size: 16px
+/*Main style for Container*/
+.container
+    width: 100%
+    max-width: nth($mediaBp, 1)
+    margin: 0 auto
+    padding: 0 10px
+.header
+    position: relative
+    &__title
+        text-align: center
+        font-size: 5.125em
+        color: red
+.nav
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+    background-color: #333333
+    &-wrap
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &-item
+    &__logo
+        width: 50px 
+        height: 50px
+        color: $mainC1
+        
+    &-menu
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 1em
+        &__link
+            color: #fff
+            font-size: 1.25em
+            margin: 0 15px
+            transition: .3s
+            &:hover
+                color: $mainC1
