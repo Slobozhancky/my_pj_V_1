@@ -1,0 +1,41 @@
+// ============================
+// MAIN COLORS
+// ============================
+
+$mainC1: #ff8b38
+$mainC2: #b0b0b0
+$mainC3: #898f98
+
+// ============================
+// MEDIA
+// ============================
+
+$mediaBp: (1110px,980px, 767px, 640px, 480px)
+
+// ============================
+// FUNCTIONS
+// ============================
+@function col-width ($n)
+	@if $n == auto
+		@return auto
+	@else
+		@return calc(100% / #{$n})
+
+// ============================
+// MIXINS
+// ============================
+
+@mixin flex ($d: flex, $jc: flex-start, $fw: nowrap, $ai: stretch, $fd: row)
+	display: $d
+	flex-flow: $fd $fw
+	justify-content: $jc
+	align-items: $ai
+	flex-direction: $fd
+
+@mixin grid ($s: 5px, $c: auto, $w: nowrap, $v: stretch, $h: flex-start)
+	&-grid
+		@include flex($fw: $w, $ai: $v, $jc: $h)
+		margin: -$s
+		&__col
+			width: col-width($c)
+			padding: $s
